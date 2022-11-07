@@ -1,0 +1,205 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6em;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.inter-card {
+  display: grid;
+  height: 100vh;
+  grid-template-rows: repeat(3, 1fr);
+}
+.inter-card__bgmain {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  grid-row: 1/2;
+  background-image: url("../img/bg-main-mobile.png");
+  background-position: center;
+  background-size: cover;
+  letter-spacing: 2px;
+  color: hsl(0deg, 0%, 100%);
+  z-index: 0;
+}
+.inter-card__bgmain-cardfront, .inter-card__bgmain-cardback {
+  padding: 1.5em;
+  position: absolute;
+  width: 350px;
+  height: 200px;
+  border-radius: 5px;
+  background-size: cover;
+  background-position: center;
+  transform: scale(0.7);
+}
+.inter-card__bgmain-cardfront {
+  top: 36%;
+  right: 10%;
+  background-image: url("../img/bg-card-front.png");
+}
+.inter-card__bgmain-cardfront-logo img {
+  width: 65px;
+  height: 35px;
+}
+.inter-card__bgmain-cardfront-number {
+  font-size: 2.2rem;
+  text-align: center;
+  margin-top: 2em;
+  letter-spacing: 2px;
+}
+.inter-card__bgmain-cardfront-other {
+  margin-top: 1.5em;
+  display: flex;
+  justify-content: space-between;
+}
+.inter-card__bgmain-cardback {
+  top: 0%;
+  left: 10%;
+  z-index: -5;
+  background-image: url("../img/bg-card-back.png");
+}
+.inter-card__bgmain-cardback-cvc {
+  position: absolute;
+  right: 40px;
+  top: 87px;
+}
+.inter-card__bgform {
+  grid-row: 2/-1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1.5em;
+}
+.inter-card__bgform-form label {
+  text-transform: uppercase;
+  color: hsl(278deg, 68%, 11%);
+  letter-spacing: 1px;
+}
+.inter-card__bgform-form input {
+  margin-top: 0.5em;
+  display: block;
+  width: 100%;
+  padding: 0.5em;
+  font-size: 1.6rem;
+  border-radius: 5px;
+  border: 1px solid hsl(270deg, 3%, 87%);
+  letter-spacing: 1px;
+}
+.inter-card__bgform-form input::-moz-placeholder {
+  color: hsl(270deg, 3%, 87%);
+}
+.inter-card__bgform-form input:-ms-input-placeholder {
+  color: hsl(270deg, 3%, 87%);
+}
+.inter-card__bgform-form input::placeholder {
+  color: hsl(270deg, 3%, 87%);
+}
+.inter-card__bgform-form input:focus {
+  outline: none;
+  border: 1px solid hsl(278deg, 68%, 11%);
+}
+.inter-card__bgform-form .input-error {
+  border: 1px solid hsl(0deg, 100%, 66%);
+}
+.inter-card__bgform-form-box {
+  margin-bottom: 1em;
+}
+.inter-card__bgform-form-box--wrapped {
+  display: flex;
+  -moz-column-gap: 0.5em;
+       column-gap: 0.5em;
+  justify-content: space-around;
+}
+.inter-card__bgform-form-box p {
+  visibility: hidden;
+  color: hsl(0deg, 100%, 66%);
+  font-size: 1.4rem;
+  margin-top: 0.5em;
+}
+.inter-card__bgform-form-btn {
+  margin-top: 1em;
+  padding: 1em;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  background-color: hsl(278deg, 68%, 11%);
+  color: hsl(270deg, 3%, 87%);
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+.inter-card__bgform-form-btn:focus {
+  outline: none;
+  border: 1px solid hsl(278deg, 68%, 11%);
+}
+
+.success__box {
+  text-align: center;
+}
+.success__box-title {
+  margin: 0.5em 0;
+  font-size: 4rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.success__box-content {
+  color: hsl(270deg, 3%, 87%);
+}
+.success__box-btn {
+  margin-top: 2em;
+  padding: 1em;
+  width: 400px;
+  border: none;
+  border-radius: 5px;
+  background-color: hsl(278deg, 68%, 11%);
+  color: hsl(270deg, 3%, 87%);
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+.success__box-btn:focus {
+  outline: none;
+  border: 1px solid hsl(278deg, 68%, 11%);
+}
+
+@media (min-width: 992px) {
+  .inter-card {
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 1fr 1fr;
+  }
+  .inter-card__bgmain {
+    grid-column: 1/5;
+    grid-row: 1/-1;
+    background-image: url("../img/bg-main-desktop.png");
+  }
+  .inter-card__bgmain-cardfront, .inter-card__bgmain-cardback {
+    transform: scale(1.2);
+  }
+  .inter-card__bgmain-cardfront {
+    top: 20%;
+    left: 55%;
+  }
+  .inter-card__bgmain-cardback {
+    top: 50%;
+    left: 70%;
+  }
+  .inter-card__bgform {
+    grid-column: 5/-1;
+    grid-row: 1/-1;
+    display: flex;
+    margin-left: 8em;
+  }
+  .inter-card__bgform-form {
+    margin: 0 auto;
+    width: 400px;
+  }
+}/*# sourceMappingURL=main.css.map */

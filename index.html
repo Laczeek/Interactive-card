@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Card</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+    <main>
+        <section class="inter-card">
+            <div class="inter-card__bgmain">
+
+                <div class="inter-card__bgmain-cardfront">
+                    <div class="inter-card__bgmain-cardfront-logo"><img src="./img/card-logo.svg" alt=""></div>
+                    <p class="inter-card__bgmain-cardfront-number">0000 0000 0000 0000</p>
+                    <div class="inter-card__bgmain-cardfront-other">
+                        <p class="inter-card__bgmain-cardfront-other-names">Felicia Leire</p>
+                        <p class="inter-card__bgmain-cardfront-other-date"><span class="card-month">00</span>/<span class="card-year">00</span></p>
+                    </div>
+                </div>
+
+                <div class="inter-card__bgmain-cardback">
+                    <p class="inter-card__bgmain-cardback-cvc">000</p>
+                </div>
+
+            </div>
+            <div class="inter-card__bgform">
+                <form class="inter-card__bgform-form">
+                    <div class="inter-card__bgform-form-box">
+                        <label for="name">Cardholder name</label>
+                        <input type="text" id="name" placeholder="e.g.Jane Appleseed">
+                        <p class="name-error">Can't be blank</p>
+                    </div>
+                    <div class="inter-card__bgform-form-box">
+                        <label for="number">Card number</label>
+                        <input type="number" id="number" placeholder="e.g.1234 1234 1234 1234" oninput="maxcharacters(numInput, 16)">
+                        <p class="number-error">Can't be blank</p>
+                    </div>
+                    <div class="inter-card__bgform-form-box inter-card__bgform-form-box--wrapped">
+                        <div class="inter-card__bgform-form-box-date">
+                            <label for="month">exp.date</label>
+                            <input type="number" id="month" placeholder="MM" class="month" oninput="maxcharacters(monthInput, 2)">
+                            <p class="date-error">Can't be blank</p>
+                        </div>
+                        <div class="inter-card__bgform-form-box-date">
+                            <label for="year">(mm/yy)</label>
+                            <input type="number" id="year" placeholder="YY" class="year" oninput="maxcharacters(yearInput, 2)">
+                            <p>Can't be blank</p>
+                        </div>
+                        <div class="inter-card__bgform-form-box-date">
+                            <label for="cvc">cvc</label>
+                            <input type="number" id="cvc" placeholder="cvc" class="cvc" oninput="maxcharacters(cvcInput, 3)">
+                            <p class="cvc-error">Can't be blank</p>
+                        </div>
+
+                    </div>
+                    <button class="inter-card__bgform-form-btn">Confirm</button>
+                </form>
+                <template class="success">
+                  <div class="success__box">
+                    <div><img src=".//img/icon-complete.svg" alt=""></div>
+                    <p class="success__box-title">thank you!</p>
+                    <p class="success__box-content">We've added your card details</p>
+                    <button class="success__box-btn">Continue</button>
+                  </div>
+                </template>
+            </div>
+        </section>
+    </main>
+
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
